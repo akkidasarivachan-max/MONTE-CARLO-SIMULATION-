@@ -169,7 +169,7 @@ def build_features(years_series):
     return base
 
 
-def monte_carlo_predict(metric, dataset_key=DEFAULT_DATASET, n_future=5, n_simulations=1000, noise_pct=0.05):
+def monte_carlo_predict(metric, dataset_key=DEFAULT_DATASET, n_future=5, n_simulations=10000, noise_pct=0.05):
     dataset = get_dataset(dataset_key)
     frame = dataset["frame"]
     metric = metric if metric in frame.columns else dataset["default_metric"]
